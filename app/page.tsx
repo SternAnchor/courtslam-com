@@ -23,19 +23,23 @@ export default function Home() {
       {/* SPLADLE SPOTLIGHT — FRONT AND CENTER */}
       <section className="section" id="spladle">
         <div className="spladle-hero">
-          {/* Hero Banner Image */}
+          {/* Real Spladle Photo — Hero */}
           <div className="spladle-banner">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/spladle-hero.svg" alt="Wrestling spladle pin — dramatic illustration" />
+            <img src="/images/spladle-photo-1.jpg" alt="Real spladle pin in a wrestling match — high school competition" />
           </div>
           <div className="spladle-badge">⚡ MOVE OF THE MOMENT</div>
           <h2 className="spladle-title">The Spladle</h2>
           <p className="spladle-subtitle">The most humiliating pin in wrestling.</p>
 
-          {/* Action Shot */}
-          <div className="spladle-image-main">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/spladle-action.svg" alt="Spladle pin being executed on the wrestling mat" />
+          {/* YouTube Video Embed */}
+          <div className="spladle-video">
+            <iframe
+              src="https://www.youtube.com/embed/6mu508nW5RA"
+              title="Wrestling Spladle Hold"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
 
           <div className="spladle-content">
@@ -101,6 +105,7 @@ export default function Home() {
           <div className="spladle-callout">
             <p>&ldquo;The spladle doesn&apos;t just beat you — it <em>embarrasses</em> you.&rdquo;</p>
           </div>
+          <p className="spladle-attribution">Photo: Chris Hunkeler / CC BY-SA 3.0</p>
         </div>
       </section>
 
