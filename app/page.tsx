@@ -13,9 +13,75 @@ export default function Home() {
             Where the <em>court</em> meets the <em>mat</em>. Two fierce sports. One obsession.
           </p>
           <div className="hero-cta">
-            <a href="#articles" className="btn btn-wrestling">🤼 Wrestling</a>
+            <a href="#spladle" className="btn btn-wrestling">🤼 The Spladle</a>
             <a href="#articles" className="btn btn-tennis">🎾 Tennis</a>
             <a href="#newsletter" className="btn btn-outline">Subscribe</a>
+          </div>
+        </div>
+      </section>
+
+      {/* SPLADLE SPOTLIGHT — FRONT AND CENTER */}
+      <section className="section" id="spladle">
+        <div className="spladle-hero">
+          <div className="spladle-badge">⚡ MOVE OF THE MOMENT</div>
+          <h2 className="spladle-title">The Spladle</h2>
+          <p className="spladle-subtitle">The most humiliating pin in wrestling.</p>
+          <div className="spladle-content">
+            <div className="spladle-description">
+              <p>
+                The <strong>spladle</strong> is a pinning combination that turns your opponent&apos;s 
+                failed shot into a devastating pretzel. You trap the head, split the legs, and roll 
+                them onto their back — all in one fluid, ruthless motion.
+              </p>
+              <p>
+                It starts from a sprawl. Your opponent shoots in, you stuff it, and instead of just 
+                defending — you attack. Hook the near leg, cradle the head, and roll through. 
+                The crowd goes silent. The ref counts the pin. It&apos;s over.
+              </p>
+              <p>
+                What makes the spladle devastating isn&apos;t just the pin — it&apos;s the 
+                <em> psychology</em>. Your opponent thought they were on offense. They shot with 
+                confidence. And in two seconds, they&apos;re staring at the ceiling wondering what 
+                happened. It&apos;s the wrestling equivalent of a tennis player crushing a return 
+                winner off a serve they weren&apos;t supposed to reach.
+              </p>
+            </div>
+            <div className="spladle-breakdown">
+              <h3>The Breakdown</h3>
+              <div className="spladle-steps">
+                <div className="spladle-step">
+                  <span className="step-number">1</span>
+                  <div>
+                    <strong>Sprawl &amp; Stuff</strong>
+                    <p>Opponent shoots — you sprawl hard, driving your hips down and killing their penetration.</p>
+                  </div>
+                </div>
+                <div className="spladle-step">
+                  <span className="step-number">2</span>
+                  <div>
+                    <strong>Hook the Leg</strong>
+                    <p>Reach through and hook their near leg from the inside. This is where the split begins.</p>
+                  </div>
+                </div>
+                <div className="spladle-step">
+                  <span className="step-number">3</span>
+                  <div>
+                    <strong>Cradle the Head</strong>
+                    <p>Lock your hands — one on the leg, one behind the head. You&apos;ve got the cradle. They&apos;re trapped.</p>
+                  </div>
+                </div>
+                <div className="spladle-step">
+                  <span className="step-number">4</span>
+                  <div>
+                    <strong>Roll &amp; Pin</strong>
+                    <p>Roll through, splitting their legs apart. Back on the mat. Shoulders down. Match over.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="spladle-callout">
+            <p>&ldquo;The spladle doesn&apos;t just beat you — it <em>embarrasses</em> you.&rdquo;</p>
           </div>
         </div>
       </section>
@@ -103,8 +169,8 @@ export default function Home() {
             <div className="article-thumb wrestling-bg">🤼‍♂️</div>
             <div className="article-body">
               <span className="article-tag tag-wrestling">Wrestling</span>
-              <h3>Why Every Tennis Player Should Train Like a Wrestler</h3>
-              <p>The explosive hip movement, the grip strength, the mental toughness — wrestling builds athletes that dominate any court.</p>
+              <h3>The Spladle: Wrestling&apos;s Most Savage Pin, Explained</h3>
+              <p>From sprawl to pin in two seconds flat. How the spladle became the most feared — and most disrespectful — move on the mat.</p>
             </div>
           </article>
           <article className="article-card">
@@ -141,6 +207,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="footer-links">
+          <a href="#spladle">The Spladle</a>
           <a href="#articles">Stories</a>
           <a href="#newsletter">Subscribe</a>
         </div>
