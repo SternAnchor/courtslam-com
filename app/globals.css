@@ -546,3 +546,46 @@ footer a:hover { text-decoration: underline; }
     grid-template-columns: 1fr;
   }
 }
+
+/* SPLADLE IMAGES */
+.spladle-banner {
+  margin: -3rem -2rem 2rem -2rem;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.spladle-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.spladle-image-main {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(230,57,70,0.2);
+  box-shadow: 0 8px 32px rgba(230,57,70,0.15);
+}
+
+.spladle-image-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.spladle-image-steps {
+  grid-column: 1 / -1;
+  margin-top: 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(45,198,83,0.2);
+  box-shadow: 0 8px 32px rgba(45,198,83,0.1);
+}
+
+.spladle-image-steps img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

@@ -23,9 +23,21 @@ export default function Home() {
       {/* SPLADLE SPOTLIGHT — FRONT AND CENTER */}
       <section className="section" id="spladle">
         <div className="spladle-hero">
+          {/* Hero Banner Image */}
+          <div className="spladle-banner">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/spladle-hero.svg" alt="Wrestling spladle pin — dramatic illustration" />
+          </div>
           <div className="spladle-badge">⚡ MOVE OF THE MOMENT</div>
           <h2 className="spladle-title">The Spladle</h2>
           <p className="spladle-subtitle">The most humiliating pin in wrestling.</p>
+
+          {/* Action Shot */}
+          <div className="spladle-image-main">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/spladle-action.svg" alt="Spladle pin being executed on the wrestling mat" />
+          </div>
+
           <div className="spladle-content">
             <div className="spladle-description">
               <p>
@@ -78,6 +90,12 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Steps Diagram */}
+            <div className="spladle-image-steps">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/spladle-steps.svg" alt="4-step spladle breakdown diagram" />
             </div>
           </div>
           <div className="spladle-callout">

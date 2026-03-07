@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: Dark -->
+  <rect x="0" y="0" width="800" height="500" fill="#0a0a0a"/>
+
+  <!-- Mat: Blue circular with white edge -->
+  <circle cx="400" cy="250" r="180" fill="white"/> <!-- Mat outer edge -->
+  <circle cx="400" cy="250" r="170" fill="#1a4b8c"/> <!-- Mat blue -->
+  <circle cx="400" cy="250" r="35" fill="white" opacity="0.1"/> <!-- Subtle center circle for depth -->
+
+  <!-- Wrestler 2 (Bottom): White, being pinned, legs split -->
+  <g fill="#f1f1f1">
+    <!-- Head and upper body (compressed and angled from the pin pressure) -->
+    <path d="M280 250 Q310 190 370 180 Q430 190 460 230 L420 250 Q360 260 280 250Z"/>
+    <!-- Left arm (W2's perspective) - flattened, slightly struggling -->
+    <path d="M360 260 L330 280 L300 270 L310 250 Z"/>
+    <!-- Right arm (W2's perspective) - pressed down by W1 -->
+    <path d="M460 230 L480 250 L460 265 L440 240 Z"/>
+
+    <!-- Left Leg (W2's perspective) - widely splayed upwards and to the left -->
+    <path d="M360 260 Q300 350 200 400 L180 370 Q250 320 300 270 L360 260Z"/>
+    <!-- Right Leg (W2's perspective) - widely splayed downwards and to the right, clearly being hooked -->
+    <path d="M460 230 Q510 320 600 350 L620 320 Q550 270 480 240 L460 230Z"/>
+  </g>
+
+  <!-- Wrestler 1 (Top): Red, executing the spladle pin, sprawled over W2 -->
+  <g fill="#e63946">
+    <!-- Main body (head, back, and hip, creating a powerful sprawling arc) -->
+    <path d="M300 150 Q250 90 180 140 L150 190 Q200 260 280 270 L330 260 Q370 220 310 150Z"/>
+    <path d="M280 270 Q320 300 370 310 L430 290 Q460 250 410 230 L330 260 L280 270Z"/>
+    <path d="M430 290 Q480 330 520 340 L550 310 Q490 280 430 290Z"/>
+    
+    <!-- Left Arm (W1's perspective) - cradling W2's head, creating the 'cradle' part of spladle -->
+    <path d="M280 270 L240 310 Q190 330 170 320 L180 290 Q220 280 250 270 L280 270Z"/>
+    <path d="M170 320 L160 340 L190 350 L210 330 L170 320Z"/> <!-- Hand -->
+
+    <!-- Right Arm (W1's perspective) - trapping W2's far arm or torso for control -->
+    <path d="M410 230 Q450 260 480 280 L500 260 Q460 240 420 210 L410 230Z"/>
+    <path d="M480 280 L500 290 L520 280 L500 260 L480 280Z"/> <!-- Hand -->
+
+    <!-- Left Leg (W1's perspective) - hooking W2's near (right) leg, crucial for the 'spladle' action -->
+    <path d="M520 340 Q560 360 600 370 L620 340 Q570 320 530 300 L520 340Z"/> <!-- Thigh -->
+    <path d="M600 370 Q620 390 640 390 L650 370 Q630 350 610 360 L600 370Z"/> <!-- Shin and hook point -->
+    <path d="M640 390 L660 400 L670 380 L650 370 L640 390Z"/> <!-- Foot -->
+
+    <!-- Right Leg (W1's perspective) - extended for balance and power in the sprawl -->
+    <path d="M330 260 Q370 210 410 170 L430 180 Q390 220 350 250 L330 260Z"/> <!-- Thigh -->
+    <path d="M410 170 Q450 130 490 120 L500 140 Q460 150 420 190 L410 170Z"/> <!-- Shin -->
+    <path d="M490 120 L510 130 L520 110 L500 100 L490 120Z"/> <!-- Foot -->
+  </g>
+</svg>

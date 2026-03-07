@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Global background -->
+  <rect x="0" y="0" width="800" height="600" fill="#0a0a0a"/>
+
+  <!-- Panel 1: Sprawl -->
+  <g transform="translate(0,0)">
+    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
+    <!-- Wrestler White (Sprawling, defending) -->
+    <path fill="#f1f1f1" d="M100 200 L120 120 C150 80, 250 80, 280 120 L300 200 L280 220 L270 280 L240 280 L230 220 L170 220 L160 280 L130 280 L120 220 Z"/>
+    <!-- Wrestler Red (Shooting, attacking) -->
+    <path fill="#e63946" d="M160 220 L180 190 C200 170, 240 170, 260 190 L280 220 L260 250 L240 250 L230 280 L190 280 L170 250 L160 250 Z"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">1</text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Sprawl</text>
+  </g>
+
+  <!-- Panel 2: Hook the Leg -->
+  <g transform="translate(400,0)">
+    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
+    <!-- Wrestler White (Still sprawling, arm hooks red's leg) -->
+    <path fill="#f1f1f1" d="M110 210 L130 130 C160 90, 260 90, 290 130 L310 210 L290 230 L280 290 L250 290 L240 230 L180 230 L170 290 L140 290 L130 230 Z"/>
+    <!-- White's hooking arm -->
+    <path fill="#f1f1f1" d="M180 230 C160 250, 160 270, 190 270 L200 260 C190 240, 190 220, 180 230 Z"/>
+    <!-- Wrestler Red (Driven down, leg exposed) -->
+    <path fill="#e63946" d="M170 230 L190 200 C210 180, 250 180, 270 200 L290 230 L270 260 L250 260 L240 290 L200 290 L180 260 Z"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">2</text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Hook Leg</text>
+  </g>
+
+  <!-- Panel 3: Cradle the Head -->
+  <g transform="translate(0,300)">
+    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
+    <!-- Wrestler White (Body over red, arms forming cradle) -->
+    <path fill="#f1f1f1" d="M130 150 C160 70, 230 70, 260 150 L270 220 C250 280, 150 280, 130 220 Z"/>
+    <!-- White's left arm (around red's head) -->
+    <path fill="#f1f1f1" d="M160 170 C140 130, 150 90, 180 90 C200 120, 190 160, 160 170 Z"/>
+    <!-- White's right arm (hooking red's leg, connecting) -->
+    <path fill="#f1f1f1" d="M220 190 C200 230, 210 260, 240 260 C250 230, 240 200, 220 190 Z"/>
+    <!-- Wrestler Red (Curled up, head and leg pulled into cradle) -->
+    <path fill="#e63946" d="M190 200 C200 160, 220 140, 240 160 C250 180, 230 220, 210 230 C190 220, 180 210, 190 200 Z"/>
+    <!-- Red's leg (pulled up by cradle) -->
+    <path fill="#e63946" d="M230 240 L240 270 L220 280 L210 250 Z"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">3</text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Cradle Head</text>
+  </g>
+
+  <!-- Panel 4: Roll and Pin -->
+  <g transform="translate(400,300)">
+    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
+    <!-- Wrestler White (On top, rolled through, legs split for pin, cradle implied) -->
+    <path fill="#f1f1f1" d="M100 180 C120 100, 280 100, 300 180 L280 220 L270 290 L230 290 L200 240 L170 290 L130 290 L120 220 Z"/>
+    <!-- Wrestler Red (Pinned on back, legs split, head cradled) -->
+    <path fill="#e63946" d="M180 160 C200 140, 220 140, 240 160 L230 200 L200 200 L190 160 Z"/>
+    <!-- Red's left leg (pulled up) -->
+    <path fill="#e63946" d="M220 200 L230 250 L200 260 L190 210 Z"/>
+    <!-- Red's right leg (extended) -->
+    <path fill="#e63946" d="M170 200 L180 240 L150 250 L140 210 Z"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">4</text>
+    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Roll &amp; Pin</text>
+  </g>
+</svg>

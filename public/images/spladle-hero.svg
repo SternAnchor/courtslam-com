@@ -1,0 +1,65 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a" />
+      <stop offset="100%" stop-color="#1a1a2e" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="400" fill="url(#bgGradient)" />
+
+  <!-- Dramatic Radiating Lines (behind wrestlers and mat) -->
+  <g transform="translate(600, 250)"> <!-- Center of impact roughly where bodies connect -->
+    <!-- Green lines -->
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(0)" opacity="0.8"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(10)" opacity="0.8"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(-10)" opacity="0.8"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(20)" opacity="0.7"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(-20)" opacity="0.7"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(30)" opacity="0.6"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(-30)" opacity="0.6"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(40)" opacity="0.5"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(-40)" opacity="0.5"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(50)" opacity="0.4"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(-50)" opacity="0.4"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(60)" opacity="0.3"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#2dc653" transform="rotate(-60)" opacity="0.3"/>
+
+    <!-- Red lines (fewer, for accent) -->
+    <rect x="-7" y="-170" width="14" height="340" fill="#e63946" transform="rotate(5)" opacity="0.9"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#e63946" transform="rotate(-5)" opacity="0.9"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#e63946" transform="rotate(15)" opacity="0.8"/>
+    <rect x="-7" y="-170" width="14" height="340" fill="#e63946" transform="rotate(-15)" opacity="0.8"/>
+  </g>
+
+  <!-- Mat Circle -->
+  <circle cx="600" cy="400" r="300" fill="#1a4b8c" />
+
+  <!-- Wrestlers (Silhouettes) -->
+  <!-- Attacker (Red: #e63946) - Executing the spladle, legs split wide, on top -->
+  <path fill="#e63946" d="
+    M 650 170                                      <!-- Start at attacker's head/neck area -->
+    C 620 110, 550 120, 480 180                     <!-- Curve for upper back/shoulder, head facing left -->
+    L 460 220                                      <!-- Left shoulder/arm toward defender -->
+    C 450 250, 430 280, 460 310                     <!-- Arm hooking around defender's body/leg -->
+    L 500 380                                      <!-- Left leg extended far left, low -->
+    L 560 370                                      <!-- Inner left thigh curve, hip area -->
+    Q 570 330, 600 290                             <!-- Crotch/hip area, bridging over defender's torso -->
+    L 720 360                                      <!-- Right leg extended far right, low -->
+    L 770 340                                      <!-- Inner right thigh curve -->
+    Q 750 280, 720 220                             <!-- Body bridging back towards right shoulder -->
+    C 710 200, 680 180, 650 170 Z                   <!-- Right shoulder/back to starting head area -->
+  " />
+
+  <!-- Defender (White: #f1f1f1) - Being pinned, intertwined with attacker -->
+  <path fill="#f1f1f1" d="
+    M 560 220                                      <!-- Start at defender's head/neck area, visible to right -->
+    C 580 180, 630 200, 680 250                     <!-- Curve for upper back/shoulder, head slightly up/right -->
+    L 660 300                                      <!-- Torso curving under attacker -->
+    L 610 320                                      <!-- Hip/buttocks under attacker's crotch -->
+    L 530 280                                      <!-- Left leg, slightly bent, under attacker's left leg -->
+    Q 510 240, 540 230                             <!-- Body/arm curving back up -->
+    C 550 225, 555 222, 560 220 Z                   <!-- Back to starting head area -->
+  " />
+</svg>
