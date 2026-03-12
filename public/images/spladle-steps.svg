@@ -1,60 +1,189 @@
 <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Global background -->
-  <rect x="0" y="0" width="800" height="600" fill="#0a0a0a"/>
+  <defs>
+    <style>
+      .panel-bg { fill: #0f1923; }
+      .white-body { fill: none; stroke: #f1f1f1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .white-head { fill: #f1f1f1; }
+      .red-body { fill: none; stroke: #e63946; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .red-head { fill: #e63946; }
+      .step-num { font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; fill: #2dc653; }
+      .step-label { font-family: Arial, sans-serif; font-size: 16px; fill: #2dc653; font-weight: bold; }
+      .note { font-family: Arial, sans-serif; font-size: 11px; fill: #7a8a9a; }
+      .arrow { fill: none; stroke: #2dc653; stroke-width: 2; stroke-dasharray: 4,3; }
+      .arrow-head { fill: #2dc653; }
+      .divider { stroke: #2dc653; stroke-width: 1; opacity: 0.3; }
+      .highlight-ring { fill: none; stroke: #2dc653; stroke-width: 1.5; stroke-dasharray: 3,2; }
+    </style>
+  </defs>
 
-  <!-- Panel 1: Sprawl -->
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  <!-- Panel dividers -->
+  <line x1="400" y1="0" x2="400" y2="600" class="divider"/>
+  <line x1="0" y1="300" x2="800" y2="300" class="divider"/>
+
+  <!-- ===== PANEL 1: SPRAWL ===== -->
   <g transform="translate(0,0)">
-    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
-    <!-- Wrestler White (Sprawling, defending) -->
-    <path fill="#f1f1f1" d="M100 200 L120 120 C150 80, 250 80, 280 120 L300 200 L280 220 L270 280 L240 280 L230 220 L170 220 L160 280 L130 280 L120 220 Z"/>
-    <!-- Wrestler Red (Shooting, attacking) -->
-    <path fill="#e63946" d="M160 220 L180 190 C200 170, 240 170, 260 190 L280 220 L260 250 L240 250 L230 280 L190 280 L170 250 L160 250 Z"/>
-    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">1</text>
-    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Sprawl</text>
+    <rect width="400" height="300" class="panel-bg"/>
+
+    <!-- RED attacker: shooting in, bent at waist, hands reaching for legs -->
+    <circle cx="175" cy="175" r="12" class="red-head"/>
+    <!-- Neck to torso -->
+    <line x1="175" y1="187" x2="155" y2="210" class="red-body"/>
+    <!-- Hips -->
+    <!-- Back leg: extended, driving -->
+    <line x1="155" y1="210" x2="110" y2="220" class="red-body"/>
+    <line x1="110" y1="220" x2="85" y2="248" class="red-body"/>
+    <!-- Front knee: on mat -->
+    <line x1="155" y1="210" x2="175" y2="235" class="red-body"/>
+    <line x1="175" y1="235" x2="165" y2="248" class="red-body"/>
+    <!-- Arms: reaching for white's legs -->
+    <line x1="175" y1="187" x2="205" y2="200" class="red-body"/>
+    <line x1="175" y1="187" x2="200" y2="215" class="red-body"/>
+
+    <!-- WHITE defender: sprawling — hips dropped hard, chest driving on red's back -->
+    <circle cx="225" cy="145" r="12" class="white-head"/>
+    <!-- Neck to torso: angled down over attacker -->
+    <line x1="225" y1="157" x2="210" y2="195" class="white-body"/>
+    <!-- Hips dropped: legs sprawled back and wide -->
+    <line x1="210" y1="195" x2="270" y2="215" class="white-body"/>
+    <line x1="270" y1="215" x2="310" y2="245" class="white-body"/>
+    <line x1="210" y1="195" x2="280" y2="230" class="white-body"/>
+    <line x1="280" y1="230" x2="325" y2="248" class="white-body"/>
+    <!-- Arms: crossface pressure and whizzer -->
+    <line x1="225" y1="157" x2="195" y2="170" class="white-body"/>
+    <line x1="225" y1="157" x2="190" y2="190" class="white-body"/>
+
+    <!-- Hip-drop arrow -->
+    <path d="M245 180 L245 215" class="arrow"/>
+    <polygon points="241,213 245,223 249,213" class="arrow-head"/>
+
+    <text x="25" y="40" class="step-num">1</text>
+    <text x="25" y="62" class="step-label">SPRAWL</text>
+    <text x="25" y="280" class="note">Hips down, stuff the shot, chest pressure</text>
   </g>
 
-  <!-- Panel 2: Hook the Leg -->
+  <!-- ===== PANEL 2: HOOK THE LEG ===== -->
   <g transform="translate(400,0)">
-    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
-    <!-- Wrestler White (Still sprawling, arm hooks red's leg) -->
-    <path fill="#f1f1f1" d="M110 210 L130 130 C160 90, 260 90, 290 130 L310 210 L290 230 L280 290 L250 290 L240 230 L180 230 L170 290 L140 290 L130 230 Z"/>
-    <!-- White's hooking arm -->
-    <path fill="#f1f1f1" d="M180 230 C160 250, 160 270, 190 270 L200 260 C190 240, 190 220, 180 230 Z"/>
-    <!-- Wrestler Red (Driven down, leg exposed) -->
-    <path fill="#e63946" d="M170 230 L190 200 C210 180, 250 180, 270 200 L290 230 L270 260 L250 260 L240 290 L200 290 L180 260 Z"/>
-    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">2</text>
-    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Hook Leg</text>
+    <rect width="400" height="300" class="panel-bg"/>
+
+    <!-- RED: flattened out prone, near leg slightly bent (exposed) -->
+    <circle cx="165" cy="200" r="12" class="red-head"/>
+    <line x1="165" y1="212" x2="170" y2="235" class="red-body"/>
+    <!-- Near leg: bent at knee, exposed -->
+    <line x1="170" y1="235" x2="200" y2="230" class="red-body"/>
+    <line x1="200" y1="230" x2="215" y2="210" class="red-body"/>
+    <!-- Far leg: flat on mat -->
+    <line x1="170" y1="235" x2="140" y2="240" class="red-body"/>
+    <line x1="140" y1="240" x2="115" y2="248" class="red-body"/>
+    <!-- Arms: flat, broken down -->
+    <line x1="165" y1="212" x2="145" y2="205" class="red-body"/>
+    <line x1="165" y1="212" x2="185" y2="205" class="red-body"/>
+
+    <!-- WHITE: on top, one arm reaching BACK to hook red's near-side leg -->
+    <circle cx="200" cy="158" r="12" class="white-head"/>
+    <line x1="200" y1="170" x2="195" y2="205" class="white-body"/>
+    <!-- Legs: base on far side -->
+    <line x1="195" y1="205" x2="245" y2="225" class="white-body"/>
+    <line x1="245" y1="225" x2="265" y2="248" class="white-body"/>
+    <line x1="195" y1="205" x2="250" y2="240" class="white-body"/>
+    <!-- Control arm: on red's head/neck (crossface) -->
+    <line x1="200" y1="170" x2="175" y2="190" class="white-body"/>
+    <!-- Hook arm: reaching back to red's near knee -->
+    <line x1="200" y1="170" x2="210" y2="190" class="white-body"/>
+    <line x1="210" y1="190" x2="215" y2="210" class="white-body"/>
+
+    <!-- Highlight the hook point -->
+    <circle cx="215" cy="210" r="10" class="highlight-ring"/>
+
+    <text x="25" y="40" class="step-num">2</text>
+    <text x="25" y="62" class="step-label">HOOK THE LEG</text>
+    <text x="25" y="280" class="note">Reach back, hook near leg behind the knee</text>
   </g>
 
-  <!-- Panel 3: Cradle the Head -->
+  <!-- ===== PANEL 3: LOCK THE CRADLE ===== -->
   <g transform="translate(0,300)">
-    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
-    <!-- Wrestler White (Body over red, arms forming cradle) -->
-    <path fill="#f1f1f1" d="M130 150 C160 70, 230 70, 260 150 L270 220 C250 280, 150 280, 130 220 Z"/>
-    <!-- White's left arm (around red's head) -->
-    <path fill="#f1f1f1" d="M160 170 C140 130, 150 90, 180 90 C200 120, 190 160, 160 170 Z"/>
-    <!-- White's right arm (hooking red's leg, connecting) -->
-    <path fill="#f1f1f1" d="M220 190 C200 230, 210 260, 240 260 C250 230, 240 200, 220 190 Z"/>
-    <!-- Wrestler Red (Curled up, head and leg pulled into cradle) -->
-    <path fill="#e63946" d="M190 200 C200 160, 220 140, 240 160 C250 180, 230 220, 210 230 C190 220, 180 210, 190 200 Z"/>
-    <!-- Red's leg (pulled up by cradle) -->
-    <path fill="#e63946" d="M230 240 L240 270 L220 280 L210 250 Z"/>
-    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">3</text>
-    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Cradle Head</text>
+    <rect width="400" height="300" class="panel-bg"/>
+
+    <!-- RED: on side, curled — head and near knee being pulled together -->
+    <circle cx="185" cy="180" r="12" class="red-head"/>
+    <line x1="185" y1="192" x2="185" y2="218" class="red-body"/>
+    <!-- Near leg: pulled up toward head -->
+    <line x1="185" y1="218" x2="205" y2="210" class="red-body"/>
+    <line x1="205" y1="210" x2="210" y2="190" class="red-body"/>
+    <!-- Far leg: trailing -->
+    <line x1="185" y1="218" x2="160" y2="235" class="red-body"/>
+    <line x1="160" y1="235" x2="140" y2="248" class="red-body"/>
+    <!-- Arms: fighting hands -->
+    <line x1="185" y1="192" x2="165" y2="195" class="red-body"/>
+    <line x1="185" y1="192" x2="200" y2="192" class="red-body"/>
+
+    <!-- WHITE: chest on red's back, arms forming cradle — one behind head, other on hooked leg, hands clasped -->
+    <circle cx="220" cy="162" r="12" class="white-head"/>
+    <line x1="220" y1="174" x2="210" y2="208" class="white-body"/>
+    <!-- Legs: solid base -->
+    <line x1="210" y1="208" x2="260" y2="228" class="white-body"/>
+    <line x1="260" y1="228" x2="280" y2="248" class="white-body"/>
+    <line x1="210" y1="208" x2="255" y2="245" class="white-body"/>
+    <!-- Arm behind red's head -->
+    <line x1="220" y1="174" x2="195" y2="175" class="white-body"/>
+    <line x1="195" y1="175" x2="185" y2="185" class="white-body"/>
+    <!-- Arm hooked on leg, meeting other hand -->
+    <line x1="220" y1="174" x2="215" y2="192" class="white-body"/>
+    <line x1="215" y1="192" x2="210" y2="190" class="white-body"/>
+
+    <!-- Hands-locked indicator -->
+    <circle cx="198" cy="188" r="12" class="highlight-ring" stroke-width="2"/>
+
+    <text x="25" y="40" class="step-num">3</text>
+    <text x="25" y="62" class="step-label">LOCK THE CRADLE</text>
+    <text x="25" y="280" class="note">Clasp hands — head and knee pinched tight</text>
   </g>
 
-  <!-- Panel 4: Roll and Pin -->
+  <!-- ===== PANEL 4: ROLL THROUGH & SPLIT (THE SPLADLE) ===== -->
   <g transform="translate(400,300)">
-    <rect x="0" y="0" width="400" height="300" fill="#1a4b8c"/>
-    <!-- Wrestler White (On top, rolled through, legs split for pin, cradle implied) -->
-    <path fill="#f1f1f1" d="M100 180 C120 100, 280 100, 300 180 L280 220 L270 290 L230 290 L200 240 L170 290 L130 290 L120 220 Z"/>
-    <!-- Wrestler Red (Pinned on back, legs split, head cradled) -->
-    <path fill="#e63946" d="M180 160 C200 140, 220 140, 240 160 L230 200 L200 200 L190 160 Z"/>
-    <!-- Red's left leg (pulled up) -->
-    <path fill="#e63946" d="M220 200 L230 250 L200 260 L190 210 Z"/>
-    <!-- Red's right leg (extended) -->
-    <path fill="#e63946" d="M170 200 L180 240 L150 250 L140 210 Z"/>
-    <text x="30" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#2dc653">4</text>
-    <text x="30" y="85" font-family="Arial, sans-serif" font-size="20" fill="#2dc653">Roll &amp; Pin</text>
+    <rect width="400" height="300" class="panel-bg"/>
+
+    <!-- RED: on back, legs split WIDE — the humiliating spladle position -->
+    <circle cx="195" cy="215" r="12" class="red-head"/>
+    <line x1="195" y1="203" x2="195" y2="185" class="red-body"/>
+    <!-- Left leg: split wide to the left -->
+    <line x1="195" y1="185" x2="145" y2="180" class="red-body"/>
+    <line x1="145" y1="180" x2="110" y2="200" class="red-body"/>
+    <!-- Right leg: split wide to the right (hooked leg forced over) -->
+    <line x1="195" y1="185" x2="250" y2="165" class="red-body"/>
+    <line x1="250" y1="165" x2="280" y2="145" class="red-body"/>
+    <!-- Arms: flailing, helpless -->
+    <line x1="195" y1="215" x2="170" y2="225" class="red-body"/>
+    <line x1="195" y1="215" x2="220" y2="228" class="red-body"/>
+    <!-- Shoulder blades on mat indicators -->
+    <line x1="185" y1="222" x2="175" y2="230" stroke="#e63946" stroke-width="2" opacity="0.5"/>
+    <line x1="205" y1="222" x2="215" y2="230" stroke="#e63946" stroke-width="2" opacity="0.5"/>
+
+    <!-- WHITE: on top, chest-to-chest, cradle still locked, driving pin -->
+    <circle cx="205" cy="170" r="12" class="white-head"/>
+    <line x1="205" y1="182" x2="200" y2="200" class="white-body"/>
+    <!-- Legs: wide base for pressure -->
+    <line x1="200" y1="200" x2="160" y2="225" class="white-body"/>
+    <line x1="160" y1="225" x2="150" y2="248" class="white-body"/>
+    <line x1="200" y1="200" x2="245" y2="225" class="white-body"/>
+    <line x1="245" y1="225" x2="255" y2="248" class="white-body"/>
+    <!-- Arms: maintaining lock, driving shoulders down -->
+    <line x1="205" y1="182" x2="190" y2="198" class="white-body"/>
+    <line x1="205" y1="182" x2="225" y2="185" class="white-body"/>
+
+    <!-- Split arrows -->
+    <path d="M150 175 L120 165" class="arrow"/>
+    <polygon points="122,160 115,165 122,170" class="arrow-head"/>
+    <path d="M245 160 L275 140" class="arrow"/>
+    <polygon points="273,135 280,140 273,145" class="arrow-head"/>
+
+    <!-- PIN badge -->
+    <rect x="170" y="238" width="55" height="20" rx="4" fill="#e63946" opacity="0.8"/>
+    <text x="180" y="253" font-family="Arial" font-size="13" font-weight="bold" fill="white">PIN</text>
+
+    <text x="25" y="40" class="step-num">4</text>
+    <text x="25" y="62" class="step-label">ROLL &amp; SPLIT</text>
+    <text x="25" y="280" class="note">Roll through, split the legs, shoulders down</text>
   </g>
 </svg>
