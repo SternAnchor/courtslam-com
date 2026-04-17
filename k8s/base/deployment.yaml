@@ -30,10 +30,10 @@ spec:
                     app: courtslam-web
                 topologyKey: kubernetes.io/hostname
       imagePullSecrets:
-        - name: registry-sternanchor
+        - name: ghcr-credentials
       containers:
         - name: web
-          image: registry.digitalocean.com/sternanchor/courtslam-web:latest
+          image: ghcr.io/sternanchor/courtslam-web:latest
           ports:
             - containerPort: 3000
           resources:

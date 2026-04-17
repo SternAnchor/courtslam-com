@@ -6,7 +6,6 @@ on:
       - main
 
 env:
-  DO_REGISTRY: registry.digitalocean.com/sternanchor
   GHCR_REGISTRY: ghcr.io/sternanchor
   IMAGE_NAME: courtslam-web
 
@@ -25,9 +24,6 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-      - name: Log in to DO Container Registry
-        run: doctl registry login --expiry-seconds 1200
-
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -38,15 +34,8 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
-            -t ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
             -t ${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
             -t ${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
-
-      - name: Push to DO Container Registry
-        run: |
-          docker push ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          docker push ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Push to GitHub Container Registry
         run: |
@@ -66,6 +55,6 @@ jobs:
       - name: Update image and rollout
         run: |
           kubectl set image deployment/courtslam-web \
-            web=${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            web=${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
             -n courtslam-main
           kubectl rollout status deployment/courtslam-web -n courtslam-main --timeout=120s
