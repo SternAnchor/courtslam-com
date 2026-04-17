@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: courtslam-web
+  namespace: courtslam-main
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - courtslam.com
+        - www.courtslam.com
+      secretName: courtslam-tls
+  rules:
+    - host: courtslam.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: courtslam-web
+                port:
+                  number: 80
+    - host: www.courtslam.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: courtslam-web
+                port:
+                  number: 80

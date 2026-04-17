@@ -1,39 +1,71 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to DigitalOcean K8s
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+env:
+  DO_REGISTRY: registry.digitalocean.com/sternanchor
+  GHCR_REGISTRY: ghcr.io/sternanchor
+  IMAGE_NAME: courtslam-web
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    permissions:
+      contents: read
+      packages: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npx next build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: out
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Log in to DO Container Registry
+        run: doctl registry login --expiry-seconds 1200
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            -t ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
+            -t ${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            -t ${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
+
+      - name: Push to DO Container Registry
+        run: |
+          docker push ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push ${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+      - name: Push to GitHub Container Registry
+        run: |
+          docker push ${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push ${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+      - name: Save kubeconfig
+        run: doctl kubernetes cluster kubeconfig save sternanchor
+
+      - name: Apply K8s manifests
+        run: |
+          kubectl apply -f k8s/base/namespace.yaml
+          kubectl apply -f k8s/base/deployment.yaml
+          kubectl apply -f k8s/base/service.yaml
+          kubectl apply -f k8s/base/ingress.yaml
+
+      - name: Update image and rollout
+        run: |
+          kubectl set image deployment/courtslam-web \
+            web=${{ env.DO_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            -n courtslam-main
+          kubectl rollout status deployment/courtslam-web -n courtslam-main --timeout=120s
